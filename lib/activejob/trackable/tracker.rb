@@ -34,7 +34,7 @@ module ActiveJob
       protected
 
         def provider_job
-          @provider_job ||= provider_job_id.presence && Delayed::Job.find(provider_job_id)
+          @provider_job ||= provider_job_id.presence && Delayed::Job.find_by(id: provider_job_id)
         end
 
       private
